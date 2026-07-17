@@ -140,16 +140,21 @@ body.girando #personaje, body.girando #halo-pers{opacity:0;}
   position:relative; z-index:8;
   display:flex; flex-direction:column; align-items:center;
   gap:clamp(12px, 2.6vmin, 30px);
-  margin-top:clamp(44px, 8vmin, 76px);
+  margin-top:clamp(44px, 8vmin, 76px);  /* deja lugar al logo centrado arriba */
+}
+/* En horizontal el logo va en la esquina, así que ese margen no hace falta:
+   ese espacio se lo damos a la ruleta. */
+@media (orientation:landscape){
+  #escena{margin-top:0;}
 }
 
 #wheel-wrap{
   position:relative;
-  width:min(84vw, 54vh, 560px);
+  width:min(96vw, 66vh, 740px);
   aspect-ratio:1;
 }
 @media (orientation:landscape){
-  #wheel-wrap{width:min(56vw, 68vh, 560px);}
+  #wheel-wrap{width:min(64vw, 78vh, 740px);}
 }
 
 /* resplandor dorado detrás de la ruleta — el halo de la marca */
@@ -292,7 +297,7 @@ body.girando #pista, body.girando #btn-girar{}
 /* Pantallas muy bajas en horizontal: compactar */
 @media (orientation:landscape) and (max-height:520px){
   #logo{height:34px;}
-  #escena{margin-top:38px; gap:10px;}
+  #escena{margin-top:0; gap:10px;}
 }
 </style>
 </head>
